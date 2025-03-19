@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.videomaxplayer"
-        minSdk = 33
+        minSdk = 30
         //noinspection EditedTargetSdkVersion
         targetSdk = 35
         versionCode = 1

@@ -1,7 +1,9 @@
 package com.example.videomaxplayer.Presentation
 import android.Manifest
+import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
@@ -21,9 +23,14 @@ import com.google.accompanist.permissions.rememberPermissionState
 
 
 
+@RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
-fun App(modifier: Modifier = Modifier, viewModel : ViewModel = hiltViewModel(), navController: NavHostController) {
+fun App(
+    modifier: Modifier = Modifier,
+    viewModel : ViewModel = hiltViewModel(),
+    navController: NavHostController
+) {
 
     val mediaPermission = rememberPermissionState(permission = Manifest.permission.READ_MEDIA_VIDEO)
     val mediaPermissionLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {
@@ -48,7 +55,9 @@ fun App(modifier: Modifier = Modifier, viewModel : ViewModel = hiltViewModel(), 
         HomeScreen(navController =navController )
 
     }else{
-        Box(modifier = Modifier.fillMaxSize() , contentAlignment = Alignment.Center){
+        Box(modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ){
             Text(text = "Please Grant Permission")
         }
     }

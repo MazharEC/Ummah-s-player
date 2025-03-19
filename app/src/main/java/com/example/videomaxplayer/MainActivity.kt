@@ -59,7 +59,7 @@ fun MainScreen() {
         Handler(Looper.getMainLooper()).postDelayed(
             {
                 showSplash.value = false
-            }, 3000
+            }, 2000
         )
 
     }
@@ -92,7 +92,7 @@ fun SplashScreen() {
 
             )
             BasicText(
-                text = "Welcome to the Video Player",
+                text = "Welcome to Mazhar's Video Player",
                 style = MaterialTheme.typography.labelLarge.copy(
                     color = Color.Black,
                     fontSize = 18.sp,

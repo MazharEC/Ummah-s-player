@@ -54,7 +54,7 @@ fun HomeScreen(navController: NavController) {
             .nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             TopAppBar(
-                title = { Text("Video Max Player")
+                title = { Text("Video Player")
                 },
                 scrollBehavior = scrollBehavior
             )
