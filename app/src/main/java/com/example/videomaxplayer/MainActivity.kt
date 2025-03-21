@@ -92,7 +92,7 @@ fun SplashScreen() {
 
             )
             BasicText(
-                text = "Welcome to Mazhar's Video Player",
+                text = "Welcome to safest Player",
                 style = MaterialTheme.typography.labelLarge.copy(
                     color = Color.Black,
                     fontSize = 18.sp,

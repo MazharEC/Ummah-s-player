@@ -5,6 +5,7 @@ plugins {
     id("com.google.dagger.hilt.android")
 
     kotlin("plugin.serialization") version "2.0.0"
+    id("org.jetbrains.kotlin.plugin.compose") version "2.0.0"
 }
 
 android {
@@ -13,8 +14,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.videomaxplayer"
-        minSdk = 30
-        //noinspection EditedTargetSdkVersion
+        minSdk = 29
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -34,19 +34,24 @@ android {
             )
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
+
     buildFeatures {
         compose = true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -73,32 +78,32 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    // this for hilt
-    implementation("com.google.dagger:hilt-android:2.50")
-    kapt("com.google.dagger:hilt-android-compiler:2.50")
+    // Dagger Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 
-    // this is for hilt navigation and compiler
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-    kapt("androidx.hilt:hilt-compiler:1.2.0")
+    // Hilt navigation
+    implementation(libs.androidx.hilt.navigation.compose)
+    kapt(libs.androidx.hilt.compiler)
 
-    // this for navigation
-    implementation("androidx.navigation:navigation-fragment-compose:2.8.0-beta01")
+    // Navigation
+    implementation(libs.androidx.navigation.fragment.compose)
 
-    // coil
-    implementation("io.coil-kt:coil-compose:2.6.0")
-    implementation ("io.coil-kt:coil-video:2.4.0")
+    // Coil for image/video loading
+    implementation(libs.coil.compose)
+    implementation(libs.coil.video)
 
     // Serialization
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation(libs.kotlinx.serialization.json)
 
-    //Permission
-    implementation ("com.google.accompanist:accompanist-permissions:0.35.1-alpha")
+    // Permissions
+    implementation(libs.accompanist.permissions)
 
-    //Exoplayer
-    implementation("androidx.media3:media3-exoplayer:1.2.1")
-    implementation("androidx.media3:media3-ui:1.2.1")
+    // Exoplayer
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.ui)
 
-    // extended-icons
-    implementation("androidx.compose.material:material-icons-extended:1.6.8")
+    // Material icons
+    implementation(libs.androidx.material.icons.extended)
 
 }
