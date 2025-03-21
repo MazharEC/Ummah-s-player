@@ -1,6 +1,5 @@
 package com.example.videomaxplayer.Utils
 
-import android.text.format.Formatter.formatFileSize
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,10 +25,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.ImageLoader
 import coil.compose.AsyncImage
+import coil.decode.VideoFrameDecoder
 import coil.request.ImageRequest
 import coil.request.videoFrameMillis
 import com.example.videomaxplayer.Presentation.Navigation.NavigationItems
-import coil.decode.VideoFrameDecoder
 
 
 @Composable

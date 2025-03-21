@@ -14,9 +14,7 @@ import androidx.core.net.toUri
 import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
-import com.example.videomaxplayer.Presentation.Navigation.NavigationItems
 
 //
 //@Composable
@@ -48,20 +46,21 @@ fun VideoPlayerScreen(url : String, navController: NavHostController) {
 
   ) {
 
-      DisposableEffect (
+      AndroidView(factory = {
 
-          AndroidView(factory ={
+          PlayerView(context).apply {
 
-              PlayerView(context).apply {
+              player = exoPlayer
+          }
+      },
+          update = {
 
-                  player = exoPlayer
-              }
-          },
-              update = {
+              it.player = exoPlayer
+          }
+      )
+      DisposableEffect(
 
-                  it.player = exoPlayer
-              }
-          )
+          Unit
       ){
           onDispose {
 

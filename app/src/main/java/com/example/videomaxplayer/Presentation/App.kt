@@ -13,14 +13,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
-import com.example.videomaxplayer.Presentation.Navigation.AppNavigation
 import com.example.videomaxplayer.Presentation.ViewModel.ViewModel
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.isGranted
 import com.google.accompanist.permissions.rememberPermissionState
-
 
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
